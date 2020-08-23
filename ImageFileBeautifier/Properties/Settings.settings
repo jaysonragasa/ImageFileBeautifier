@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ImageFileBeautifier.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="YearFolderPrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Year</Value>
+    </Setting>
+    <Setting Name="MonthFolderPrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Month of</Value>
+    </Setting>
+    <Setting Name="TodoWhenDuplicate" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CurrentFileNamingFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MMMM dd, yyyy - hhmmss</Value>
+    </Setting>
+    <Setting Name="FileNamingFormats" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Mdy - hhmmss&lt;/string&gt;
+  &lt;string&gt;M/d/y - hhmmss&lt;/string&gt;
+  &lt;string&gt;MM/dd/yy - hhmmss&lt;/string&gt;
+  &lt;string&gt;MM/dd/yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;MMM/dd/yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;MMMM/dd/yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;MMMM dd, yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;dddd, MMMM dd, yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;MMM dd, yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;ddd, MMM dd, yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;dMy - hhmmss&lt;/string&gt;
+  &lt;string&gt;d/M/y - hhmmss&lt;/string&gt;
+  &lt;string&gt;dd/MM/yy - hhmmss&lt;/string&gt;
+  &lt;string&gt;dd MMM, yy - hhmmss&lt;/string&gt;
+  &lt;string&gt;dd MMM, yyyy - hhmmss&lt;/string&gt;
+  &lt;string&gt;dd MMMM, yyyy - hhmmss&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="UseDateModified" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsTrial" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RenamedPictureCounter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MachineID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LicenseID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="IncludeSubfolders" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
