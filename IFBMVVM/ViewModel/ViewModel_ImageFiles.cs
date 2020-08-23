@@ -156,6 +156,26 @@ namespace IFBMVVM.ViewModel
             {
                 //Properties = GetExIf(current_file);
 
+                string[] imageFiles = { ".jpg" };
+                string ext = fi.Extension.ToLowerInvariant();
+
+#if EXP_ALLOW_VIDEOS
+                if (imageFiles.Contains(ext))
+                {
+                    using (FileStream fs = new FileStream(current_file, FileMode.Open, FileAccess.Read))
+                    using (Image myImage = Image.FromStream(fs, false, false))
+                    {
+                        PropertyItem propItem = myImage.GetPropertyItem(36867);
+                        string dateTaken = r.Replace(Encoding.UTF8.GetString(propItem.Value), "-", 2);
+
+                        Properties.EXIF_DTOrig = dateTaken;
+                    }
+                }
+                else
+                {
+                    Properties.EXIF_DTOrig = fi.LastWriteTime.ToString();
+                }
+#else
                 using (FileStream fs = new FileStream(current_file, FileMode.Open, FileAccess.Read))
                 using (Image myImage = Image.FromStream(fs, false, false))
                 {
@@ -164,6 +184,7 @@ namespace IFBMVVM.ViewModel
 
                     Properties.EXIF_DTOrig = dateTaken;
                 }
+#endif
             }
             catch (Exception ex)
             {
@@ -217,9 +238,9 @@ namespace IFBMVVM.ViewModel
             this.exifReadWorker.ReportProgress(count);
         }
 
-        #endregion
+#endregion
 
-        #region // Methods /
+#region // Methods /
 
         public void InitStat(iStatus stat)
         {
@@ -237,12 +258,8 @@ namespace IFBMVVM.ViewModel
                     FileInfo fi = new FileInfo(x);
                     if (fi.Exists)
                     {
-                        // accept JPG only file
-                        if (fi.Extension.ToLower() == ".jpg")
-                        {
-                            // enqueue files
-                            this.Files.Enqueue(fi.FullName);
-                        }
+                        // enqueue files
+                        this.Files.Enqueue(fi.FullName);
                     }
                 });
             }
@@ -324,9 +341,9 @@ namespace IFBMVVM.ViewModel
             return ret;
         }
 
-        #endregion
+#endregion
 
-        #region INotifyPropertyChanged Members
+#region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -338,6 +355,6 @@ namespace IFBMVVM.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-        #endregion 
+#endregion
     }
 }

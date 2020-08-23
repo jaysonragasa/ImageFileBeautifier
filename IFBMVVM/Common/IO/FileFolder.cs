@@ -1,23 +1,25 @@
-﻿using System;
+﻿using IFBMVVM.Common.Enums;
+using IFBMVVM.Interface;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using IFBMVVM.Common.Enums;
-using IFBMVVM.Interface;
 
 namespace IFBMVVM.Common.IO
 {
     public class FileFolder
     {
-        List<string> AllowedExtensions = new List<string>()
+        List<string> _allowedExt = new List<string>()
         {
             ".jpg"
+#if EXP_ALLOW_VIDEOS
+            , ".mp4", ".mov", ".avi", ".mpg"
+#else
+#endif
         };
 
         iNamingFormat namFormat;
 
-        #region // Properties /
+#region // Properties /
 
         public string OutputDirectory { get; set; }
         public string SourceDirectory { get; set; }
@@ -31,9 +33,9 @@ namespace IFBMVVM.Common.IO
             set { this._monthfolderformat = value; }
         }
 
-        #endregion
+#endregion
 
-        #region // Constructor /
+#region // Constructor /
 
         public FileFolder(iNamingFormat _namFormat)
         {
@@ -47,7 +49,7 @@ namespace IFBMVVM.Common.IO
         static readonly FileFolder _i = new FileFolder();
         public static FileFolder Instance { get { return _i; } }
 
-        #endregion
+#endregion
 
         public bool isAccessible(string folder)
         {
@@ -117,13 +119,13 @@ namespace IFBMVVM.Common.IO
                     foreach (string fn in Directory.GetFiles(dir, "*.*"))
                     {
                         FileInfo fi = new FileInfo(fn);
-                        if (AllowedExtensions.Count == 0)
+                        if (_allowedExt.Count == 0)
                         {
                             result.Add(fi.FullName);
                         }
                         else
                         {
-                            if (AllowedExtensions.Contains(fi.Extension.ToLower()))
+                            if (_allowedExt.Contains(fi.Extension.ToLowerInvariant()))
                             {
                                 result.Add(fi.FullName);
                             }

@@ -47,8 +47,9 @@ namespace IFBMVVM.Model
                     string raw = value;
                     raw = raw.Replace("\0", string.Empty);
                     // 2017-04-01 22:05:52
-                    string newDate = DateTime.ParseExact(raw, "yyyy-MM-dd HH:mm:ss", null).ToString();
-                    this._DTOrig = newDate;
+                    //string newDate = DateTime.ParseExact(raw, "yyyy-MM-dd HH:mm:ss", null).ToString();
+                    //string newDate = DateTime.ParseExact(raw, "yyyy-MM-dd HH:mm:ss", null).ToString();
+                    this._DTOrig = raw;
                     //NotifyPropertyChanged("EXIF_DTOrig");
                 }
             }
