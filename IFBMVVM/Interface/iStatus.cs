@@ -6,7 +6,7 @@ using System.Text;
 
 namespace IFBMVVM.Interface
 {
-    public interface iStatus
+    public interface IStatus
     {
         string LogText { get; set; }
         int RenamedFiles { get; set; }
@@ -15,9 +15,9 @@ namespace IFBMVVM.Interface
 
     public class Status
     {
-        iStatus _stat;
+        IStatus _stat;
 
-        public Status(iStatus stat)
+        public Status(IStatus stat)
         {
             this._stat = stat;
         }

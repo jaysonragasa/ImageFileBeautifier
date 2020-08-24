@@ -3,7 +3,7 @@ using System;
 
 namespace IFBMVVM.Interface
 {
-    public interface iNamingFormat
+    public interface INamingFormat
     {
         string YearPrefix { get; set; }
         string MonthPrefix { get; set; }

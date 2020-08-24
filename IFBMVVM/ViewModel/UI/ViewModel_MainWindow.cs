@@ -14,11 +14,11 @@ namespace IFBMVVM.ViewModel.UI
 {
     public class ViewModel_MainWindow : INotifyPropertyChanged //, iStatus
     {
-        iMainWindow _view;
-        iNamingFormat _namFormat;
+        IMainWindow _view;
+        INamingFormat _namFormat;
         ViewModel_ImageFiles _vmif;
         Timer tmr = new Timer();
-        iStatus _stat;
+        IStatus _stat;
 
         ObservableCollection<Model_WorkDetails> _SourceCollection = new ObservableCollection<Model_WorkDetails>();
         public ObservableCollection<Model_WorkDetails> SourceCollections
@@ -31,7 +31,7 @@ namespace IFBMVVM.ViewModel.UI
             }
         }
 
-        public ViewModel_MainWindow(iMainWindow view, iNamingFormat namFormat)
+        public ViewModel_MainWindow(IMainWindow view, INamingFormat namFormat)
         {
             this._view = view;
             this._namFormat = namFormat;
@@ -44,7 +44,7 @@ namespace IFBMVVM.ViewModel.UI
             tmr.Tick += tmr_Tick;
         }
 
-        public void InitStat(iStatus stat)
+        public void InitStat(IStatus stat)
         {
             this._stat = stat;
         }

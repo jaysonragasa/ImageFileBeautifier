@@ -19,7 +19,7 @@ namespace ImageFileBeautifier
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, iMainWindow, iStatus, iNamingFormat
+    public partial class MainWindow : Window, IMainWindow, IStatus, INamingFormat
     {
         ViewModel_MainWindow vmme;
         Random r = new Random(DateTime.Now.Second);

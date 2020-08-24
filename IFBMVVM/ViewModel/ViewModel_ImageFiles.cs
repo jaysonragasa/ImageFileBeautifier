@@ -21,10 +21,10 @@ namespace IFBMVVM.ViewModel
     public delegate void DoneHandler(object sender, Model_WorkDetails WorkDetails);
     public class ViewModel_ImageFiles : INotifyPropertyChanged 
     {
-        iMainWindow _view;
-        iNamingFormat _namFormat;
+        IMainWindow _view;
+        INamingFormat _namFormat;
 
-        iStatus _stat;
+        IStatus _stat;
         Queue<string> Files;
         BackgroundWorker exifReadWorker;
         int count = 0;
@@ -98,7 +98,7 @@ namespace IFBMVVM.ViewModel
         }
         #endregion
 
-        public ViewModel_ImageFiles(iMainWindow view, iNamingFormat namFormat)
+        public ViewModel_ImageFiles(IMainWindow view, INamingFormat namFormat)
         {
             this._view = view;
             this._namFormat = namFormat;
@@ -106,7 +106,7 @@ namespace IFBMVVM.ViewModel
             Initialize();
         }
 
-        public ViewModel_ImageFiles(iNamingFormat namFormat)
+        public ViewModel_ImageFiles(INamingFormat namFormat)
         {
             this._namFormat = namFormat;
             Initialize();
@@ -242,7 +242,7 @@ namespace IFBMVVM.ViewModel
 
 #region // Methods /
 
-        public void InitStat(iStatus stat)
+        public void InitStat(IStatus stat)
         {
             _stat = stat;
         }

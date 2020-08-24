@@ -17,7 +17,7 @@ namespace IFBMVVM.Common.IO
 #endif
         };
 
-        iNamingFormat namFormat;
+        INamingFormat namFormat;
 
 #region // Properties /
 
@@ -37,7 +37,7 @@ namespace IFBMVVM.Common.IO
 
 #region // Constructor /
 
-        public FileFolder(iNamingFormat _namFormat)
+        public FileFolder(INamingFormat _namFormat)
         {
             this.namFormat = _namFormat;
             this.ScanSubidrectory = true;

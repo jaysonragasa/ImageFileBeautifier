@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IFBMVVM.Interface
 {
-    public interface iSettings
+    public interface ISettings
     {
         bool IncludeSubfolders { get; set; }
     }
